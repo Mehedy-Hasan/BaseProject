@@ -1,0 +1,49 @@
+<div class="container m-0 p-0">
+  <!-- <mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia">
+</mat-form-field> -->
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <!-- UserName Column -->
+      <ng-container matColumnDef="userName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.userName}} </td>
+      </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+        <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+      </ng-container>
+
+      <!-- PhoneNumber Column -->
+      <ng-container matColumnDef="phoneNumber">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone No </th>
+        <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.phoneNumber}} </td>
+      </ng-container>
+
+      <!-- Crud Operation Column -->
+      <ng-container matColumnDef="event">
+        <th mat-header-cell *matHeaderCellDef>
+          <mat-form-field>
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Search">
+          </mat-form-field>
+        </th>
+        <td mat-cell *matCellDef="let row" value="row.id">
+          <button class="btn btn-outline-primary mr-1" (click)="edit(row.id)">Edit</button>
+          <button class="btn btn-outline-danger" (click)="edit(row.id)">Delete</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+      </tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
+</div>

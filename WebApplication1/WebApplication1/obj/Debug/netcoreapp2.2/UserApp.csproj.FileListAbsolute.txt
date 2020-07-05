@@ -1,0 +1,14 @@
+D:\Project\EntryPoint\UserApi\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.2\UserApp.deps.json
+D:\Project\EntryPoint\UserApi\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.2\UserApp.runtimeconfig.json
+D:\Project\EntryPoint\UserApi\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.2\UserApp.runtimeconfig.dev.json
+D:\Project\EntryPoint\UserApi\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.2\UserApp.dll
+D:\Project\EntryPoint\UserApi\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.2\UserApp.pdb
+D:\Project\EntryPoint\UserApi\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\UserApp.csproj.CoreCompileInputs.cache
+D:\Project\EntryPoint\UserApi\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\UserApp.RazorAssemblyInfo.cache
+D:\Project\EntryPoint\UserApi\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\UserApp.RazorAssemblyInfo.cs
+D:\Project\EntryPoint\UserApi\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\UserApp.AssemblyInfoInputs.cache
+D:\Project\EntryPoint\UserApi\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\UserApp.AssemblyInfo.cs
+D:\Project\EntryPoint\UserApi\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\UserApp.RazorTargetAssemblyInfo.cache
+D:\Project\EntryPoint\UserApi\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\UserApp.dll
+D:\Project\EntryPoint\UserApi\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\UserApp.pdb
+D:\Project\EntryPoint\UserApi\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\UserApp.csprojAssemblyReference.cache

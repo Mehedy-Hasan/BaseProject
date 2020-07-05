@@ -1,0 +1,129 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-4">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+        <h2 class="text-center text-primary">Sign Up</h2>
+        <hr>
+        <!-- Gender input -->
+        <div class="form-group" style="text-align: center;">
+            <label class="control-label" style="margin-right:10px">I am a: </label>
+            <label class="radio-inline">
+                <input class="mr-3" type="radio" value="male" formControlName="gender">Male
+            </label>
+            <label class="radio-inline ml-3">
+                <input class="mr-3" type="radio" value="female" formControlName="gender">Female
+            </label>
+        </div>
+    
+        <!-- username input -->
+        <div class="form-group">
+            <input type="text"
+                [ngClass]="{'is-invalid': registerForm.get('userName').errors && registerForm.get('userName').touched}"
+                class="form-control" formControlName="userName" placeholder="userName">
+            <div class="invalid-feedback">Please choose your username</div>
+        </div>
+    
+        <!-- Fullname Input -->
+        <div class="form-group">
+            <input [ngClass]="{'is-invalid': registerForm.get('fullName').errors && registerForm.get('fullName').touched}"
+                class="form-control" placeholder="Full Name" formControlName="fullName">
+            <div class="invalid-feedback"
+                *ngIf="registerForm.get('fullName').touched && registerForm.get('fullName').hasError('required')">Known as
+                is
+                required</div>
+        </div>
+
+        <!-- Date of Birth Input -->
+        <div class="form-group">
+            <mat-form-field appearance="outline" class="w-100" [ngStyle]="{'padding': 0}">
+                <mat-label>Choose a date</mat-label>
+                <input [ngClass]="{'is-invalid': registerForm.get('dateOfBirth').errors  && registerForm.get('dateOfBirth').touched}"
+                    formControlName="dateOfBirth" matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker disabled="false"></mat-datepicker>
+                <mat-error style="padding-bottom: 10px !important;" *ngIf="registerForm.get('dateOfBirth').touched && registerForm.get('dateOfBirth').hasError('required')">Date of birth is required</mat-error>
+            </mat-form-field>
+        </div>
+    
+        <!-- Address Input -->
+        <div class="form-group">
+            <input [ngClass]="{'is-invalid': registerForm.get('address').errors && registerForm.get('address').touched}"
+                class="form-control" placeholder="address" formControlName="address">
+            <div class="invalid-feedback"
+                *ngIf="registerForm.get('address').touched && registerForm.get('address').hasError('required')">City is
+                required
+            </div>
+        </div>
+    
+        <!-- Email Input -->
+        <div class="form-group">
+            <input [ngClass]="{'is-invalid': registerForm.get('email').errors && registerForm.get('email').touched}"
+                class="form-control" placeholder="email" formControlName="email">
+            <div class="invalid-feedback"
+                *ngIf="registerForm.get('email').touched && registerForm.get('email').hasError('required')">Country is
+                required</div>
+        </div>
+    
+        <!-- Phone Number Input -->
+        <div class="form-group">
+            <input
+                [ngClass]="{'is-invalid': registerForm.get('phoneNumber').errors && registerForm.get('phoneNumber').touched}"
+                class="form-control" placeholder="phoneNumber" formControlName="phoneNumber">
+            <div class="invalid-feedback"
+                *ngIf="registerForm.get('phoneNumber').touched && registerForm.get('phoneNumber').hasError('required')">
+                Country is
+                required</div>
+        </div>
+
+        <!-- Photo input -->
+        <div class="form-group">
+            <input type="file" #inputFile class="form-control" multiple>
+        </div>
+    
+        <!-- Password Input -->
+        <div class="form-group">
+            <input type="password"
+                [ngClass]="{'is-invalid': registerForm.get('password').errors && registerForm.get('password').touched}"
+                class="form-control" formControlName="password" placeholder="password">
+            <div class="invalid-feedback"
+                *ngIf="registerForm.get('password').hasError('required') && registerForm.get('password').touched">Password
+                is
+                required
+            </div>
+            <div class="invalid-feedback"
+                *ngIf="registerForm.get('password').hasError('minlength') && registerForm.get('password').touched">Password
+                minimum 4 character
+            </div>
+            <div class="invalid-feedback"
+                *ngIf="registerForm.get('password').hasError('maxlength') && registerForm.get('password').touched">Password
+                maximum 8 character
+            </div>
+        </div>
+    
+        <!-- Confirm Password Input -->
+        <div class="form-group">
+            <input type="password" [ngClass]="{'is-invalid': 
+          registerForm.get('confirmPassword').errors && registerForm.get('confirmPassword').touched
+          || registerForm.get('confirmPassword').touched && registerForm.hasError('misMatch')}" class="form-control"
+                formControlName="confirmPassword" placeholder=" Confirm Password">
+            <div class="invalid-feedback"
+                *ngIf="registerForm.get('confirmPassword').hasError('required') && registerForm.get('confirmPassword').touched">
+                Password is required
+            </div>
+            <div class="invalid-feedback"
+                *ngIf="registerForm.get('confirmPassword').touched && registerForm.hasError('misMatch')">Password misMatch
+            </div>
+        </div>
+    
+        <div class="form-group text-center">
+            <button class="btn btn-success mr-2" [disabled]="!registerForm.valid" type="submit">Register</button>
+        </div>
+    
+    </form>
+    </div>
+    </div>
+</div>
+<!-- 
+<P>{{ registerForm.value | json }}</P>
+<P>{{ registerForm.status | json }}</P> -->
